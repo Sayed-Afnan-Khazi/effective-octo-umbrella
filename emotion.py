@@ -11,9 +11,6 @@ from LeXmo import LeXmo
 
 def getEmotion(text):
 
-
-    text = "Like did I do a mistake by messaging them?" 
-
     emo=LeXmo.LeXmo(text)
 
     # print(emo)
@@ -36,7 +33,7 @@ def getEmotion(text):
 
 if __name__ == "__main__":
     # testing the function
-    text = "Like did I do a mistake by messaging them?" 
+    text = "Like did I do a mistake by messaging them?" # Kinda angry message
     mostProbableEmo, mostProbableExtraEmo = getEmotion(text)
     print("Most Probable Emotion:", mostProbableEmo)
     print("Most Probable State:", mostProbableExtraEmo)
