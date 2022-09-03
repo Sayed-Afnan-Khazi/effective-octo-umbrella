@@ -1,3 +1,5 @@
+# A Big Thank You to Dina Bavli: https://betterprogramming.pub/unlocking-emotions-in-text-using-python-6d062b48d71f
+
 import nltk
 nltk.download('punkt')
 import pandas as pd
