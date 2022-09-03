@@ -36,6 +36,7 @@ def listen_for_client(cs):
             # if we received a message, replace the <SEP> 
             # token with ": " for nice printing
             msg = msg.replace(separator_token, ": ")
+            print("I am in server.py!")
         # iterate over all connected sockets
         for client_socket in client_sockets:
             # and send the message

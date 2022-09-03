@@ -4,6 +4,8 @@ from threading import Thread
 from datetime import datetime
 from colorama import Fore, init, Back
 
+from emotion import getEmotion
+
 # init colors
 init()
 
@@ -37,7 +39,14 @@ name = input("Enter your name: ")
 def listen_for_messages():
     while True:
         message = s.recv(1024).decode()
+        # print("I'm in listen for messages!!")
+        rawMessage = message.split()[3:]
+        rawMessage[-1] = rawMessage[-1][:8]
+        rawMessage = " ".join(rawMessage)
+        # print(rawMessage)
+        mostProbableEmo, mostProbableExtraEmo = getEmotion(rawMessage)
         print("\n" + message)
+        print("Most Probable Emotion:", mostProbableEmo)
 
 # make a thread that listens for messages to this client & print them
 t = Thread(target=listen_for_messages)
